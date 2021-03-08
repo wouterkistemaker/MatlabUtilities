@@ -2,21 +2,22 @@
 % sample frequency (Fs). If output-arguments are 0, both the
 % fouriertransformed and the normal function are plotted in two seperate
 % figures using subplots. 
-
+%
 % fftx and ffty are the matrices containing the values of the
 % Fourier Transform of f(t). 
-
+%
 % Example:
 % 
-% fs=50; % Sample frequency of 50Hz
-% dt=1/fs; % Time-step 
-% t=0:dt:10; % Time-axis from 0 to 10 
+%   % fs=50; % Sample frequency of 50Hz
+%   % dt=1/fs; % Time-step 
+%   % t=0:dt:10; % Time-axis from 0 to 10 
 %
-% x=sin(2*pi*3*t); % Sine of 3 Hz
+%   % x=sin(2*pi*3*t); % Sine of 3 Hz
 %
-% fouriertransform(t,fs,x); % Calling it like this will plot x en F(w) of x
+%   % fouriertransform(t,fs,x); % Calling it like this will plot x en F(w) of x
 % 
-% [fftx, ffty] = fouriertransform(t,fs,x); % This won't plot the F(w) of x
+%   % [fftx, ffty] = fouriertransform(t,fs,x);
+% This won't plot the F(w) of x
 % but will return the result of the Fourier Transform in two matrices fftx
 % and ffty
 
