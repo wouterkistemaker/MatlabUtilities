@@ -18,7 +18,7 @@
 % © Wouter Kistemaker 9-4-2021
 % Version 1.0
 
-function [data] = readecg(filename, fs, time)
+function [data] = readecg(filename, fs, time, precision)
     fid = fopen(filename, 'r');
     
     if fid==-1
@@ -33,7 +33,13 @@ function [data] = readecg(filename, fs, time)
     
     if nargin == 3
         data = fread(fid, fs*time);
-    else
-        error("Specify 1 or 3 arguments")
-    end    
+        return
+    end
+    
+    if nargin == 4
+        data = fread(fid, fs*time, precision);
+        return
+    end
+    
+    error("Specify 1 or 3 arguments")
 end
