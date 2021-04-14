@@ -3,7 +3,7 @@
 % provided by the research platform PhysioNet.org. 
 % 
 % Right now, only header-files that belong to ECG-research is supported, but expansion of
-% this support may occor in the future.
+% this support may occur in the future.
 %   
 %   Apnea database header file structure :
 %       - Record information:  [record name] [number of signals] [sample frequency] [total sample count]
@@ -12,12 +12,14 @@
 %   It is worth mentioning that some of these settings have sub-settings
 %   that are not yet being parsed. These settings are:
 %
-%       Record information (record name):[number of segments]
-%       Record information (sample frequency):[counter frequency]
-%       Record information (counter frequency):[base counter value]
-%
-%       Signal specifications (ADC gain): [baseline]
-%       Signal specifications (ADC gain): [units]
+%       Record information:
+%           (record name): [number of segments]
+%           (sample frequency):[counter frequency]
+%           (counter frequency):[base counter value]
+%       
+%       Signal specifications:
+%           (ADC gain): [baseline]
+%           (ADC gain): [units]
 %       
 %   Besides the sub-settings, there are a number of other settings that are
 %   not yet included. This function was designed to parse headers from the
@@ -26,13 +28,14 @@
 %   from other ECG databases.
 %
 %   Settings that are not yet included are:
-%
-%       Record information: [base time]
-%       Record information: [base date]
-%
-%       Signal specifications: [samples per frame]
-%       Signal specifications: [skew]
-%       Signal specifications: [byte offset]
+%       Record information:
+%           - [base time]
+%           - [base date]
+%       
+%       Signal specifications:
+%           - [samples per frame]
+%           - [skew]
+%           - [byte offset]
 %          
 % © Wouter Kistemaker 14-4-2021
 % Version 1.0
