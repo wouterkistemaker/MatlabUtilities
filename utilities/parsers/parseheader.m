@@ -43,6 +43,10 @@ function [settings] = parseheader(file)
 
     fid = fopen(file, 'r');
     
+    if fid==-1
+        error("File not found")
+    end
+    
     for lineidx=1:2
         line = fgetl(fid);
         values=split(line);
