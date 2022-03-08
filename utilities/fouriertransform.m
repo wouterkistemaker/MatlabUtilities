@@ -22,6 +22,7 @@
 % and ffty
 
 % © Wouter Kistemaker 8-3-2022
+% TG UTwente
 % Version 1.1
 function [fftx, ffty] = fouriertransform(t, fs, f, fftxMin, fftxMax)
     N=length(t);
