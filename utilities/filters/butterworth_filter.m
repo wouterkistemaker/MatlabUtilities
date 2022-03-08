@@ -24,6 +24,7 @@
 %
 %
 % © Wouter Kistemaker 8-3-2022
+% TG UTwente
 % Version 1.1
 
 function [filtered_signal,b,a] = butterworth_filter(cf, order, original_signal, type)
