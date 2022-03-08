@@ -3,6 +3,7 @@
 % band-pass butterworth filter
 
 % © Wouter Kistemaker 10-4-2021
+% TG UTwente
 % Version 1.0
 function [filtered_signal, b, a] = butterworth_bandpass_filter(cf, order, original_signal)
     if ~isa(cf, 'double') || length(cf) ~= 2
