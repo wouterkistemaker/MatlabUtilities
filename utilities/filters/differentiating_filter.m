@@ -7,6 +7,7 @@
 %       - deltaT : the time step between 2 samples
 %
 % © Wouter Kistemaker 14-4-2021
+% TG UTwente
 % Version 1.0
 function [filtered_signal] = differentiating_filter(original_signal, deltaT)
     n=length(original_signal);
