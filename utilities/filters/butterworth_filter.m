@@ -14,7 +14,7 @@
 %   % cf=6/(fs/2);                              % Cutoff-frequency of 6 Hz, 
 %                                               % normalized to half of the sample frequency
 %   % t=0:1/fs:1;                               % 1 second, 100 samples
-%   % x=sin(2 * pi * 5 * t) + 2 * pi * 8 * t);  % 5 and 8 Hz components
+%   % x=sin(2 * pi * 5 * t) + sin(2 * pi * 8 * t);  % 5 and 8 Hz components
 %   
 %   % [filtered_signal,b,a] = butterworth_filter(cf, 2, x, 'low'); 
 %
@@ -23,8 +23,8 @@
 %   % [filtered_signal,b,a] = butterworth_filter(cf, 2, x, 'high');
 %
 %
-% © Wouter Kistemaker 10-4-2021
-% Version 1.0
+% © Wouter Kistemaker 8-3-2022
+% Version 1.1
 
 function [filtered_signal,b,a] = butterworth_filter(cf, order, original_signal, type)
     if nargin <3
