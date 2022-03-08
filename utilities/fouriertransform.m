@@ -21,15 +21,18 @@
 % but will return the result of the Fourier Transform in two matrices fftx
 % and ffty
 
-% © Wouter Kistemaker 7-3-2021
-% Version 1.0
+% © Wouter Kistemaker 8-3-2022
+% Version 1.1
 function [fftx, ffty] = fouriertransform(t, fs, f, fftxMin, fftxMax)
     N=length(t);
     
+    
     if isa(f, "function_handle")
         temp=f(t);
+        withLegend=1;
     else
         temp=f;
+        withLegend=0;
     end
     
     if nargin < 3
@@ -40,8 +43,14 @@ function [fftx, ffty] = fouriertransform(t, fs, f, fftxMin, fftxMax)
     ffty=abs(fft(temp));
        
     if nargout==0
-        subplot(2,1,1); plot(t,temp); xlabel("Time (s)"); legend(char(f));
-        subplot(2,1,2); plot(fftx, ffty); xlabel("Frequency (Hz)"); legend("Fourier Transform of " + char(f));
+        subplot(2,1,1); plot(t,temp); xlabel("Time (s)"); 
+            if withLegend
+                legend(char(f)); 
+            end
+        subplot(2,1,2); plot(fftx, ffty); xlabel("Frequency (Hz)"); 
+            if withLegend
+                legend("Fourier Transform of " + char(f));
+            end
         
         if nargin == 4
             xlim([fftxMin, max(fftx)]);
@@ -51,5 +60,7 @@ function [fftx, ffty] = fouriertransform(t, fs, f, fftxMin, fftxMax)
             xlim([fftxMin, fftxMax]);
         end
         
+        % Make sure the highest peak is visible without the need to scroll
+        ylim([0, 1.1 * max(ffty)]); 
     end
 end
