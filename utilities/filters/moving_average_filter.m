@@ -6,6 +6,7 @@
 %       - nSamples : amount of extra samples to use
 %
 % © Wouter Kistemaker 14-4-2021
+% TG UTwente
 % Version 1.0
 function [filtered_signal] = moving_average_filter(original_signal, nSamples)
     n = length(original_signal);
